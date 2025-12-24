@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "x-mas-cli"
-version = "0.1.0"
+version = "0.1.2"
 description = "A tiny terminal Christmas tree with falling snow (Rich Live)."
 readme = "README.md"
 requires-python = ">=3.10"
