@@ -33,8 +33,8 @@ Repository = "https://github.com/Soju06/x-mas"
 Issues = "https://github.com/Soju06/x-mas/issues"
 
 [project.scripts]
-x-mas-cli = "xmas.scene:main"
-xmas = "xmas.scene:main"
+x-mas-cli = "xmas.scene:cli"
+xmas = "xmas.scene:cli"
 
 [tool.hatch.build.targets.wheel]
 packages = ["xmas"]

@@ -365,3 +365,10 @@ def main() -> None:
             live.update(frame_text)
             frame += 1
             time.sleep(0.08)
+
+
+def cli() -> None:
+    try:
+        main()
+    except KeyboardInterrupt:
+        return
