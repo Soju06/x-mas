@@ -1,0 +1,56 @@
+name: CI
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  lint:
+    name: Lint (ruff)
+    runs-on: ubuntu-24.04
+
+    steps:
+      - name: 🔄 Checkout repository
+        uses: actions/checkout@v4
+
+      - name: 🐍 Set up uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          python-version: "3.13"
+          enable-cache: true
+
+      - name: 🧹 Ruff check
+        run: uvx ruff check .
+
+      - name: 🧽 Ruff format (check)
+        run: uvx ruff format --check .
+
+  package:
+    name: Package (build)
+    runs-on: ubuntu-24.04
+
+    steps:
+      - name: 🔄 Checkout repository
+        uses: actions/checkout@v4
+
+      - name: 🐍 Set up uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          python-version: "3.13"
+          enable-cache: true
+
+      - name: 📥 Install package (runtime deps)
+        run: uv pip install -e .
+
+      - name: 🧪 Import check
+        run: python -c "import xmas; import xmas.scene; print('import ok')"
+
+      - name: 📦 Build sdist + wheel
+        run: uvx --from build python -m build
+
+
