@@ -1,7 +1,4 @@
-from __future__ import annotations
-
-from .scene import main
-
+from xmas.scene import main
 
 if __name__ == "__main__":
     try:
