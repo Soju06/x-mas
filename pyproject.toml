@@ -1,0 +1,56 @@
+[build-system]
+requires = ["hatchling>=1.27.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "x-mas"
+version = "0.1.0"
+description = "A tiny terminal Christmas tree with falling snow (Rich Live)."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+authors = [{ name = "Soju06", email = "qlskssk@gmail.com" }]
+keywords = ["christmas", "terminal", "rich", "ascii", "cli"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Artistic Software",
+    "Topic :: Terminals",
+]
+dependencies = [
+    "rich>=14.2.0",
+]
+
+[project.scripts]
+x-mas = "xmas.scene:main"
+xmas = "xmas.scene:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["xmas"]
+
+[tool.hatch.build.targets.sdist]
+include = ["xmas/**", "pyproject.toml", "README.md", "LICENSE"]
+
+[project.optional-dependencies]
+dev = [
+    "pre-commit>=4.0.0",
+    "ruff>=0.8.0",
+]
+
+[tool.ruff]
+target-version = "py310"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["F", "I"]
+fixable = ["ALL"]
+
+[tool.ruff.format]
+line-ending = "lf"
