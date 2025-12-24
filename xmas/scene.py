@@ -224,7 +224,9 @@ def render_frame(
     return result
 
 
-def spawn_particles(rng: random.Random, width: int, particles: list[Particle], max_particles: int) -> None:
+def spawn_particles(
+    rng: random.Random, width: int, particles: list[Particle], max_particles: int
+) -> None:
     if len(particles) >= max_particles:
         return
     spawn_count = rng.randint(0, max(2, width // 25))
@@ -357,5 +359,3 @@ def main() -> None:
             live.update(frame_text)
             frame += 1
             time.sleep(0.08)
-
-
