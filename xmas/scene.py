@@ -10,7 +10,7 @@ from rich.text import Text
 
 VIEW_WIDTH = 80
 VIEW_HEIGHT = 20
-RUN_HINT = " $ uvx x-mas"
+RUN_HINT = " $ uvx x-mas-cli"
 
 
 @dataclass

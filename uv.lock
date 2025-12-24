@@ -230,8 +230,8 @@ wheels = [
 ]
 
 [[package]]
-name = "x-mas"
-version = "0.1.0"
+name = "x-mas-cli"
+version = "0.1.3"
 source = { editable = "." }
 dependencies = [
     { name = "rich" },
