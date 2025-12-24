@@ -10,6 +10,7 @@ from rich.text import Text
 
 VIEW_WIDTH = 80
 VIEW_HEIGHT = 20
+RUN_HINT = " $ uvx x-mas"
 
 
 @dataclass
@@ -186,6 +187,11 @@ def render_frame(
         star_char = "*" if (frame // 12) % 2 == 0 else "+"
         grid[star_y][star_x] = (star_char, "bold #FFD700")
 
+    if height > 0 and width > 0:
+        hint_y = height - 1
+        for i, ch in enumerate(RUN_HINT[:width]):
+            grid[hint_y][i] = (ch, "dim white")
+
     result = Text()
     for y in range(height):
         for x in range(width):
@@ -224,9 +230,7 @@ def render_frame(
     return result
 
 
-def spawn_particles(
-    rng: random.Random, width: int, particles: list[Particle], max_particles: int
-) -> None:
+def spawn_particles(rng: random.Random, width: int, particles: list[Particle], max_particles: int) -> None:
     if len(particles) >= max_particles:
         return
     spawn_count = rng.randint(0, max(2, width // 25))

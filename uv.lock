@@ -230,7 +230,7 @@ wheels = [
 ]
 
 [[package]]
-name = "xmas"
+name = "x-mas"
 version = "0.1.0"
 source = { editable = "." }
 dependencies = [
