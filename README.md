@@ -1,4 +1,4 @@
-## x-mas
+## x-mas-cli
 
 A tiny terminal Christmas tree with falling snow, built with [Rich](https://github.com/Textualize/rich).
 
@@ -7,5 +7,5 @@ A tiny terminal Christmas tree with falling snow, built with [Rich](https://gith
 From PyPI (no install, via `uvx`):
 
 ```bash
-uvx x-mas
+uvx x-mas-cli
 ```

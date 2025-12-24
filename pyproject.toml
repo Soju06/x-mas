@@ -3,7 +3,7 @@ requires = ["hatchling>=1.27.0"]
 build-backend = "hatchling.build"
 
 [project]
-name = "x-mas"
+name = "x-mas-cli"
 version = "0.1.0"
 description = "A tiny terminal Christmas tree with falling snow (Rich Live)."
 readme = "README.md"
@@ -33,7 +33,7 @@ Repository = "https://github.com/Soju06/x-mas"
 Issues = "https://github.com/Soju06/x-mas/issues"
 
 [project.scripts]
-x-mas = "xmas.scene:main"
+x-mas-cli = "xmas.scene:main"
 xmas = "xmas.scene:main"
 
 [tool.hatch.build.targets.wheel]
